@@ -19,9 +19,13 @@ app.get("/search/:title", (req: Request, res: Response) => {
       },
     })
     .then((response) => {
-      let newMovies = response.data.results.map((movie: any, i: number) => {
-        return { ...movie, watched: false, trueIndex: i, display: false };
-      });
+      let newMovies = response.data.results
+        .map((movie: any, i: number) => {
+          return { ...movie, watched: false, trueIndex: i, display: false };
+        })
+        .filter((movie: any) => {
+          return movie.poster_path;
+        });
       console.log(newMovies);
       res.status(200).send(newMovies);
     })

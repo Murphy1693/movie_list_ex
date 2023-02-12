@@ -7,9 +7,9 @@ type MovieListProps = {
 
 const MovieList = ({ movies }: MovieListProps) => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 md:flex-row md:flex-wrap">
       {movies.map((movie) => {
-        return <MovieListEntry movie={movie} />;
+        return <MovieListEntry key={movie.id} movie={movie} />;
       })}
     </div>
   );

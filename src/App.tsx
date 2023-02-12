@@ -2,11 +2,21 @@ import { useState, useEffect, useMemo } from "react";
 import { Movie } from "../types";
 import "./style.css";
 import MovieList from "./MovieList";
-import axios from "axios";
 import { x } from "../sample";
+import Display from "./Display";
+import SearchBar from "./SearchBar";
+import axios from "axios";
 
-const getMovies = (title: string, callback: (data: any) => void) => {
-  axios.get(`/search/${title}`).then(callback).catch();
+export const getMovies = (title: string, callback: (data: any) => void) => {
+  axios
+    .get(`/search/${title}`)
+    .then((response) => {
+      if (response.status === 200) {
+        console.log(response.data);
+        callback(response.data);
+      }
+    })
+    .catch();
 };
 
 const App = () => {
@@ -20,13 +30,8 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-t from-[#3d3d3d] to-[#1d1d1d] p-6 text-white">
-      <div className="flex justify-between">
-        <input className="mr-4 bg-[#575757]"></input>
-        <div className="mr-auto text-[#ffff00]">Search</div>
-      </div>
-      <div className="">
-        <div className="pt-6">Display243</div>
-      </div>
+      <SearchBar setMovies={setMovies} />
+      <Display movie={movies[0]}></Display>
       <MovieList movies={movies} />
     </div>
   );

@@ -22,5 +22,5 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
   },
-  "include": ["src/**/*", "index.tsx", "server/utils.ts"]
+  "include": ["src/*", "index.tsx"],
 }

@@ -56,8 +56,12 @@ app.get("/search/:title", function (req, res) {
         }
     })
         .then(function (response) {
-        var newMovies = response.data.results.map(function (movie, i) {
+        var newMovies = response.data.results
+            .map(function (movie, i) {
             return __assign(__assign({}, movie), { watched: false, trueIndex: i, display: false });
+        })
+            .filter(function (movie) {
+            return movie.poster_path;
         });
         console.log(newMovies);
         res.status(200).send(newMovies);
