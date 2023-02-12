@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "./dist/",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "allowUmdGlobalAccess": true, // make typescript work with ProvidePlugin
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "isolatedModules": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+  },
+  "include": ["src/**/*", "index.tsx", "server/utils.ts"]
+}
