@@ -3,9 +3,10 @@ import { Movie } from "../types";
 
 type MovieListEntryProps = {
   movie: Movie;
+  handleWatched: (id: Movie["id"]) => void;
 };
 
-const MovieListEntry = ({ movie }: MovieListEntryProps) => {
+const MovieListEntry = ({ movie, handleWatched }: MovieListEntryProps) => {
   const [open, setOpen] = useState(false);
   const [hover, setHover] = useState(false);
   return (
@@ -21,8 +22,8 @@ const MovieListEntry = ({ movie }: MovieListEntryProps) => {
       }}
       className={
         open
-          ? "relative flex max-w-3xl  overflow-hidden transition-[height] md:basis-2/5"
-          : "relative flex h-20 max-w-3xl  overflow-hidden transition-[height] md:basis-2/5"
+          ? "relative flex max-w-3xl  overflow-hidden transition-[height] md:basis-[45%]"
+          : "relative flex max-w-3xl  overflow-hidden transition-[height] md:basis-[45%]"
       }
     >
       {movie.poster_path ? (
@@ -45,6 +46,9 @@ const MovieListEntry = ({ movie }: MovieListEntryProps) => {
         >
           {movie.title}
         </span>
+        <pre className="font-serif text-[14px] font-bold">
+          {movie.release_date}
+        </pre>
         {/* <button className="mt-auto font-serif text-sm">Show</button> */}
         <div
           className={
@@ -54,6 +58,34 @@ const MovieListEntry = ({ movie }: MovieListEntryProps) => {
           }
         >
           <span className="max-w-[184px] flex-wrap">{movie.overview}</span>
+        </div>
+      </div>
+      <div
+        onMouseOver={(e) => {
+          e.stopPropagation();
+        }}
+        className="flex items-center"
+      >
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+            handleWatched(movie.id);
+          }}
+          style={{ writingMode: "vertical-lr", textOrientation: "upright" }}
+          className={
+            movie.watched
+              ? "flex cursor-pointer border-2 border-yellow-300 p-1 font-serif text-[10px] font-bold uppercase text-yellow-300"
+              : "flex cursor-pointer border-2 border-white p-1 font-serif text-[10px] uppercase text-white"
+          }
+        >
+          watched
+          {/* <button
+          style={{
+            writingMode: "vertical-lr",
+          }}
+        >
+          Watched
+        </button> */}
         </div>
       </div>
     </div>
