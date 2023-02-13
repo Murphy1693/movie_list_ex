@@ -21,10 +21,12 @@ const SearchBar = ({ setMovies }: SearchBarType) => {
         <button
           onClick={(e) => {
             e.preventDefault();
-            getMovies(searchQuery, (data) => {
-              console.log(data);
-              setMovies(data);
-            });
+            if (searchQuery) {
+              getMovies(searchQuery, (data) => {
+                console.log(data);
+                setMovies(data);
+              });
+            }
           }}
           className=" font-bold text-yellow-300"
         >

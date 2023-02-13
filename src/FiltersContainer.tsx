@@ -11,7 +11,7 @@ const FiltersContainer = ({
 }: FiltersContainerProps) => {
   return (
     <div>
-      <div className="flex justify-center gap-6 py-6">
+      <div className="flex justify-center gap-6 py-6 md:justify-end">
         <button
           className={
             filters.unwatched.value
@@ -37,8 +37,8 @@ const FiltersContainer = ({
           Show Watched
         </button>
       </div>
-      <div className="m-auto flex w-fit flex-col justify-center pb-4">
-        <pre className="m-auto text-sm font-bold text-yellow-300">
+      <div className=" flex w-fit flex-col justify-center pb-4">
+        {/* <pre className="m-auto text-sm font-bold text-yellow-300">
           Filter Results
         </pre>
         <input
@@ -51,7 +51,7 @@ const FiltersContainer = ({
               searchValue: e.target.value,
             });
           }}
-        ></input>
+        ></input> */}
       </div>
     </div>
   );

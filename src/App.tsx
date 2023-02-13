@@ -7,6 +7,7 @@ import Display from "./Display";
 import SearchBar from "./SearchBar";
 import axios from "axios";
 import Topbar from "./Topbar";
+import Home from "./Home";
 
 export const getMovies = (title: string, callback: (data: any) => void) => {
   axios
@@ -22,6 +23,7 @@ export const getMovies = (title: string, callback: (data: any) => void) => {
 const App = () => {
   const [movies, setMovies] = useState<Movie[]>(x);
   const [view, setView] = useState(true); /* true Home | false My List // */
+  const [myMovies, setMyMovies] = useState<Movie[]>([]);
 
   // useEffect(() => {
   //   getMovies("batman", (response) => {
@@ -34,9 +36,11 @@ const App = () => {
       <div>
         <Topbar setView={setView} view={view} />
         <div className="mx-auto max-w-6xl flex-col p-6">
-          <SearchBar setMovies={setMovies} />
-          <Display movie={movies[0]} />
-          <MovieList movies={movies} />
+          {view ? (
+            <Home movies={movies} setMovies={setMovies}></Home>
+          ) : (
+            <div></div>
+          )}
         </div>
       </div>
     </div>

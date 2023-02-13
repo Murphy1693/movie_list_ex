@@ -7,6 +7,7 @@ const Topbar = ({ setView, view }: TopbarProps) => {
   return (
     <div className="sticky top-0 z-10 flex justify-end md:justify-center md:bg-gray-900">
       <div className="flex max-w-6xl bg-gray-900 md:w-full md:justify-end">
+        {/* <span className="bg-transparent">myMovie</span> */}
         <button
           onClick={() => {
             setView(true);

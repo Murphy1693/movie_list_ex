@@ -74,8 +74,8 @@ const MovieListEntry = ({ movie, handleWatched }: MovieListEntryProps) => {
           style={{ writingMode: "vertical-lr", textOrientation: "upright" }}
           className={
             movie.watched
-              ? "flex cursor-pointer border-2 border-yellow-300 p-1 font-serif text-[10px] font-bold uppercase text-yellow-300"
-              : "flex cursor-pointer border-2 border-white p-1 font-serif text-[10px] uppercase text-white"
+              ? "flex cursor-pointer select-none border-2 border-yellow-300 p-1 font-serif text-[10px] font-bold uppercase text-yellow-300"
+              : "flex cursor-pointer select-none border-2 border-white p-1 font-serif text-[10px] uppercase text-white"
           }
         >
           watched
