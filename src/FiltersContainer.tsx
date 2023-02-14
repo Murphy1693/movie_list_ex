@@ -15,8 +15,8 @@ const FiltersContainer = ({
         <button
           className={
             filters.unwatched.value
-              ? " bg-yellow-300 p-1 text-[10px] font-bold uppercase text-black"
-              : "border-2 p-1 text-[10px] font-bold uppercase"
+              ? " border-2 border-yellow-300 bg-yellow-300 p-1 text-[10px] font-bold uppercase text-black"
+              : "border-2 p-1 text-[10px] font-bold uppercase opacity-50"
           }
           onClick={() => {
             filtersDispatch({ type: "unwatched" });
@@ -27,8 +27,8 @@ const FiltersContainer = ({
         <button
           className={
             filters.watched.value
-              ? " bg-yellow-300 p-1 text-[10px] font-bold uppercase text-black"
-              : "border-2 p-1 text-[10px] font-bold uppercase"
+              ? "border-2 border-yellow-300 bg-yellow-300 p-1 text-[10px] font-bold uppercase text-black"
+              : "border-2 p-1 text-[10px] font-bold uppercase opacity-50"
           }
           onClick={() => {
             filtersDispatch({ type: "watched" });
@@ -45,7 +45,6 @@ const FiltersContainer = ({
           className="bg-[#393939]"
           value={filters.searchQuery.value as string}
           onChange={(e) => {
-            console.log(e.target.value);
             filtersDispatch({
               type: "searchQuery",
               searchValue: e.target.value,

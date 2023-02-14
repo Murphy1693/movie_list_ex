@@ -9,7 +9,6 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 
 app.get("/search/:title", (req: Request, res: Response) => {
-  console.log("get111", req.url);
   axios
     .get("https://api.themoviedb.org/3/search/movie", {
       params: {
@@ -26,7 +25,6 @@ app.get("/search/:title", (req: Request, res: Response) => {
         .filter((movie: any) => {
           return movie.poster_path;
         });
-      console.log(newMovies);
       res.status(200).send(newMovies);
     })
     .catch((err) => {

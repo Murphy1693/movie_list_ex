@@ -7,11 +7,11 @@ const Topbar = ({ setView, view }: TopbarProps) => {
   return (
     <div className="sticky top-0 z-10 flex justify-end bg-neutral-900 md:relative md:justify-center">
       <div className="flex w-full max-w-6xl md:justify-end">
-        <div className="flex-end mr-auto flex pl-4">
+        <div className="mr-auto flex pl-4">
           <span className="text-end font-serif italic first-letter:text-3xl">
             my
           </span>
-          <span className="mr-auto align-baseline font-serif italic first-letter:text-4xl">
+          <span className="mr-auto align-baseline font-serif italic text-yellow-300 first-letter:text-4xl">
             movie
           </span>
         </div>

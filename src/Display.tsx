@@ -42,7 +42,6 @@ const Display = ({ movies }: DisplayProps) => {
   const [change, setChange] = useState(false);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [hover, setHover] = useState(false);
-  const [skippable, setSkippable] = useState(false);
   const z = useRef<NodeJS.Timeout | null>(null);
 
   let startRolling = function () {
@@ -79,19 +78,6 @@ const Display = ({ movies }: DisplayProps) => {
         onMouseLeave={() => {
           setHover(false);
           startRolling();
-        }}
-        onClick={() => {
-          console.log(carouselIndex);
-          console.log(movies);
-          if (skippable) {
-            psuedoScroll(
-              setChange,
-              change,
-              setCarouselIndex,
-              carouselIndex,
-              movies.length
-            );
-          }
         }}
         style={
           !change

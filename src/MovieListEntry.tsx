@@ -75,7 +75,7 @@ const MovieListEntry = ({ movie, handleWatched }: MovieListEntryProps) => {
           className={
             movie.watched
               ? "flex cursor-pointer select-none border-2 border-yellow-300 p-1 font-serif text-[10px] font-bold uppercase text-yellow-300"
-              : "flex cursor-pointer select-none border-2 border-white p-1 font-serif text-[10px] uppercase text-white"
+              : "flex cursor-pointer select-none border-2 border-white p-1 font-serif text-[10px] uppercase text-white opacity-50"
           }
         >
           watched
