@@ -10,7 +10,9 @@
 
 ### Mobile
 
-![alt text](gif/myMovieMobile.gif)
+<div align="center" width="100%">
+  <img src="gif/myMovieMobile.gif">
+</div>
 
 ### Background
 
