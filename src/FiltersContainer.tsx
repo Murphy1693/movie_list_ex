@@ -11,7 +11,7 @@ const FiltersContainer = ({
 }: FiltersContainerProps) => {
   return (
     <div>
-      <div className="flex justify-center gap-6 py-6 md:justify-end">
+      <div className="flex gap-6 py-6 md:justify-end">
         <button
           className={
             filters.unwatched.value

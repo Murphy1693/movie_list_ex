@@ -25,11 +25,9 @@ const App = () => {
   const [view, setView] = useState(true); /* true Home | false My List // */
   const [myMovies, setMyMovies] = useState<Movie[]>([]);
 
-  // useEffect(() => {
-  //   getMovies("batman", (response) => {
-  //     setMovies(response.data);
-  //   });
-  // });
+  useEffect(() => {
+    getMovies("batman", setMovies);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-t from-[#3d3d3d] to-[#1d1d1d] text-white">
