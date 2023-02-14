@@ -13,9 +13,22 @@ const wait = (ms: number) => {
   });
 };
 
-const psuedoScroll = async (setChange, change, setIndex, index, arrLength) => {
+type psuedoScrollProps = (
+  setChange: (change: boolean) => void,
+  change: boolean,
+  setIndex: (index: number) => void,
+  index: number,
+  arrLength: number
+) => void;
+
+const psuedoScroll: psuedoScrollProps = async (
+  setChange,
+  change,
+  setIndex,
+  index,
+  arrLength
+) => {
   setChange(true);
-  console.log("called");
   await wait(1100);
   if (arrLength === index + 1) {
     setIndex(0);
@@ -86,10 +99,6 @@ const Display = ({ movies }: DisplayProps) => {
                 display: "flex",
                 width: "200%",
                 height: "520px",
-                // transform: "translate(100%)",
-                // transition: "transform",
-                // transitionDelay: "500ms",
-                // transitionDuration: "1s",
               }
             : {
                 height: "520px",
@@ -99,7 +108,6 @@ const Display = ({ movies }: DisplayProps) => {
                 alignSelf: "right",
                 transform: "translate(-50%)",
                 transition: "transform",
-                // transitionDelay: "500ms",
                 transitionDuration: ".5s",
               }
         }
