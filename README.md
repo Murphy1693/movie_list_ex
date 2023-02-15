@@ -8,10 +8,8 @@
   <img src="https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black" />
 </div>
 
-### Mobile
-
 <div align="center" width="100%">
-  <img src="gif/myMovieMobile.gif">
+  <img src="gif/myMovieMobileAnimated.gif">
 </div>
 
 ### Background
